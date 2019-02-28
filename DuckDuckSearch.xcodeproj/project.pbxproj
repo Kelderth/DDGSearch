@@ -21,6 +21,10 @@
 		04122DDA22237055003461DB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DD922237055003461DB /* ImageCache.swift */; };
 		04122DDC22237CDF003461DB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DDB22237CDF003461DB /* SearchViewModel.swift */; };
 		04E7F3AD222706CA0064AFE0 /* ImageView+additionalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */; };
+		04E7F3B0222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3AE222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld */; };
+		04E7F3B422285D420064AFE0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B322285D420064AFE0 /* DataController.swift */; };
+		04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */; };
+		04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +44,10 @@
 		04122DD922237055003461DB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		04122DDB22237CDF003461DB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+additionalSettings.swift"; sourceTree = "<group>"; };
+		04E7F3AF222850FC0064AFE0 /* DuckDuckSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DuckDuckSearch.xcdatamodel; sourceTree = "<group>"; };
+		04E7F3B322285D420064AFE0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataClass.swift"; sourceTree = "<group>"; };
+		04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,7 @@
 				04122DBE22205FD4003461DB /* Assets.xcassets */,
 				04122DC022205FD4003461DB /* LaunchScreen.storyboard */,
 				04122DC322205FD4003461DB /* Info.plist */,
+				04E7F3AE222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld */,
 			);
 			path = DuckDuckSearch;
 			sourceTree = "<group>";
@@ -88,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				04122DD522226ECB003461DB /* DDGModel.swift */,
+				04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */,
+				04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -119,6 +130,7 @@
 				04122DD722230F00003461DB /* NetworkService.swift */,
 				04122DD922237055003461DB /* ImageCache.swift */,
 				04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */,
+				04E7F3B322285D420064AFE0 /* DataController.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -195,10 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E7F3B0222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld in Sources */,
+				04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */,
+				04E7F3B422285D420064AFE0 /* DataController.swift in Sources */,
 				04122DD622226ECB003461DB /* DDGModel.swift in Sources */,
 				04E7F3AD222706CA0064AFE0 /* ImageView+additionalSettings.swift in Sources */,
 				04122DCC2221C3F6003461DB /* SearchHeader.swift in Sources */,
 				04122DDA22237055003461DB /* ImageCache.swift in Sources */,
+				04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */,
 				04122DBA22205FD1003461DB /* SearchViewController.swift in Sources */,
 				04122DB822205FD1003461DB /* AppDelegate.swift in Sources */,
 				04122DCA2220C809003461DB /* ResultViewController.swift in Sources */,
@@ -402,6 +418,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		04E7F3AE222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				04E7F3AF222850FC0064AFE0 /* DuckDuckSearch.xcdatamodel */,
+			);
+			currentVersion = 04E7F3AF222850FC0064AFE0 /* DuckDuckSearch.xcdatamodel */;
+			path = DuckDuckSearch.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04122DAC22205FD1003461DB /* Project object */;
 }
