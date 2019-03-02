@@ -73,7 +73,7 @@ class SearchViewModel {
         searchTerms = dp.loadData()!
         return searchTerms.count
     }
-        
+    
     func termsArrayContent() -> [String]? {
         return searchTerms
     }
@@ -87,6 +87,11 @@ class SearchViewModel {
         searchTerms.insert(term, at: 0)
         dp.saveData(term: term)
         completion()
+    }
+    
+    func deleteFromSearchTerm(index: Int) {
+        dp.deleteData(term: searchTerms[index])
+        searchTerms.remove(at: index)
     }
     
     func filterSearchTerm(term: String) -> Bool {

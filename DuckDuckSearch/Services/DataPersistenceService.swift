@@ -48,7 +48,23 @@ class DataPersistenceService: NSManagedObject {
         return termsArray
     }
     
-    func deleteData(index: Int) {
+    func deleteData(term: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SearchTerms")
+        request.predicate = NSPredicate(format: "term = %@", term)
         
+        do {
+            let record = try context.fetch(request) as! [NSManagedObject]
+            for item in record {
+                context.delete(item)
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("There was a problem while saving changes.")
+                }
+            }
+        } catch {
+            print("Request nos founded!")
+        }
     }
 }

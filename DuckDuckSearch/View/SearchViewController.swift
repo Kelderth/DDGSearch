@@ -102,6 +102,13 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         return header
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            vm.deleteFromSearchTerm(index: indexPath.row)
+            tableView.deleteRows(at: [IndexPath(item: indexPath.row, section: 0)], with: .fade)
+        }
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
