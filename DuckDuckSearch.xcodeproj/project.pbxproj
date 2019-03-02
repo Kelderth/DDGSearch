@@ -25,6 +25,7 @@
 		04E7F3B422285D420064AFE0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B322285D420064AFE0 /* DataController.swift */; };
 		04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */; };
 		04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */; };
+		04E7F3BA2228937F0064AFE0 /* DataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		04E7F3B322285D420064AFE0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 				04122DD922237055003461DB /* ImageCache.swift */,
 				04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */,
 				04E7F3B322285D420064AFE0 /* DataController.swift */,
+				04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				04E7F3B0222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld in Sources */,
 				04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */,
+				04E7F3BA2228937F0064AFE0 /* DataPersistenceService.swift in Sources */,
 				04E7F3B422285D420064AFE0 /* DataController.swift in Sources */,
 				04122DD622226ECB003461DB /* DDGModel.swift in Sources */,
 				04E7F3AD222706CA0064AFE0 /* ImageView+additionalSettings.swift in Sources */,

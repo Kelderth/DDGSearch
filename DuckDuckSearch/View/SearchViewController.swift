@@ -81,7 +81,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? SearchTableViewCell else { return UITableViewCell() }
         
-        cell.searchTermLabel.text = vm.searchTerms[indexPath.row]
+        cell.searchTermLabel.text = vm.termsArrayContent()![indexPath.row]
         
         return cell
     }

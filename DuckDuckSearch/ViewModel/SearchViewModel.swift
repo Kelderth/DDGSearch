@@ -15,6 +15,7 @@ class SearchViewModel {
     var searchResult: DDGModel?
     var searchTerms: [String] = [String]()
     let ns = NetworkService()
+    let dp = DataPersistenceService()
     
     func setURL(for term: String?) -> URL? {
         let baseURL: URL! = URL(string: self.baseURL)
@@ -69,7 +70,12 @@ class SearchViewModel {
     }
     
     func searchTermArraySize() -> Int {
+        searchTerms = dp.loadData()!
         return searchTerms.count
+    }
+        
+    func termsArrayContent() -> [String]? {
+        return searchTerms
     }
     
     func saveSearchTerm(term: String, completion: @escaping () -> Void) {
@@ -79,6 +85,7 @@ class SearchViewModel {
         }
         
         searchTerms.insert(term, at: 0)
+        dp.saveData(term: term)
         completion()
     }
     
