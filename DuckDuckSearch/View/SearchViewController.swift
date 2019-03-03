@@ -39,17 +39,24 @@ class SearchViewController: UIViewController {
                     self.vm.saveSearchTerm(term: term, completion: {
                         self.performSegue(withIdentifier: "Result", sender: nil)
                         
-                        if !self.vm.filterSearchTerm(term: term) {
+                        if !self.vm.searchTermExistsInTable(term: term) {
                             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .left)
                         }
                         
-                        self.tableView.reloadData()
+                        self.vm.filterTableViewContent(text: self.vm.getSearchBarText(), completion: {
+                            self.tableView.reloadData()                            
+                        })
+                        
                     })
                 }
             } else {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
                     self.searchMessageAlertResponse(term: term)
+                    self.vm.restartTermArrayContent()
+                    self.vm.filterTableViewContent(text: self.vm.emptySearchBatText(), completion: {
+                        self.tableView.reloadData()
+                    })
                 }
             }
         }
@@ -120,18 +127,12 @@ extension SearchViewController: UISearchBarDelegate {
         activityIndicatorView.startAnimating()
         
         downloadResult(for: searchBar.text!)
-        searchBar.text = ""
         searchBar.becomeFirstResponder()
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        DispatchQueue.main.async {
-//            self.vm.searchTerms = self.vm.filterTableViewContent(text: searchText)!
-//            print(self.vm.searchTerms)
-//            self.tableView.reloadData()
-//        }
         vm.filterTableViewContent(text: searchText) {
-            print(self.vm.searchTerms)
+            self.vm.searchBarText = searchBar.text ?? ""
             self.tableView.reloadData()
         }
     }

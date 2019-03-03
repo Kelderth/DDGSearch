@@ -15,6 +15,7 @@ class SearchViewModel {
     var searchResult: DDGModel?
     var searchTerms: [String] = [String]()
     var searchTermsBackup: [String] = [String]()
+    var searchBarText: String = ""
     let ns = NetworkService()
     let dp = DataPersistenceService()
     
@@ -59,8 +60,8 @@ class SearchViewModel {
     }
     
     func loadDataFromDP() {
-        searchTermsBackup = dp.loadData()!
         searchTerms = dp.loadData()!
+        searchTermsBackup = dp.loadData()!
     }
     
     func getTitle() -> String {
@@ -75,22 +76,40 @@ class SearchViewModel {
         return (searchResult?.imageURL)!
     }
     
+    func getSearchBarText() -> String {
+        return searchBarText
+    }
+    
+    func emptySearchBatText() -> String {
+        searchBarText = ""
+        return searchBarText
+    }
+    
     func searchTermArraySize() -> Int {
         return searchTerms.count
     }
     
+    func restartTermArrayContent() {
+        searchTerms = searchTermsBackup
+    }
+    
     func termsArrayContent() -> [String]? {
+        
         return searchTerms
     }
     
     func saveSearchTerm(term: String, completion: @escaping () -> Void) {
+        searchTerms = searchTermsBackup
+        
         if searchTerms.contains(term) {
             completion()
             return
         }
         
         searchTerms.insert(term, at: 0)
-        searchTermsBackup = searchTerms
+        searchTermsBackup.insert(term, at: 0)
+        
+        searchBarText = ""
         dp.saveData(term: term)
         completion()
     }
@@ -98,9 +117,10 @@ class SearchViewModel {
     func deleteFromSearchTerm(index: Int) {
         dp.deleteData(term: searchTerms[index])
         searchTerms.remove(at: index)
+        searchTermsBackup = searchTerms
     }
     
-    func filterSearchTerm(term: String) -> Bool {
+    func searchTermExistsInTable(term: String) -> Bool {
         return searchTerms.contains(term)
     }
     
@@ -109,20 +129,16 @@ class SearchViewModel {
     }
     
     func filterTableViewContent(text: String, completion: @escaping () -> Void) {
-//        let searchTermsBackup = dp.loadData()
-        
         var searchTermsFiltered: [String]?
+        searchBarText = text
         
         searchTermsFiltered = searchTermsBackup.filter({$0.contains(text)})
                 
-        if searchTermsFiltered?.count != 0 {
-            searchTerms = searchTermsFiltered!
-            completion()
-        } else if searchTermsFiltered?.count == 0 && text != "" {
+        if ((searchTermsFiltered?.count)! == 0 && text != "") || (searchTermsFiltered?.count)! > 0 {
             searchTerms = searchTermsFiltered!
             completion()
         } else {
-            loadDataFromDP()
+            searchTerms = searchTermsBackup
             completion()
         }
     }
