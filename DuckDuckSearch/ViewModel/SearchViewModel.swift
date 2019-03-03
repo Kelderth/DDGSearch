@@ -14,6 +14,7 @@ class SearchViewModel {
     let baseURL: String = "https://api.duckduckgo.com"
     var searchResult: DDGModel?
     var searchTerms: [String] = [String]()
+    var searchTermsBackup: [String] = [String]()
     let ns = NetworkService()
     let dp = DataPersistenceService()
     
@@ -57,6 +58,11 @@ class SearchViewModel {
         }
     }
     
+    func loadDataFromDP() {
+        searchTermsBackup = dp.loadData()!
+        searchTerms = dp.loadData()!
+    }
+    
     func getTitle() -> String {
         return (searchResult?.title)!
     }
@@ -70,7 +76,6 @@ class SearchViewModel {
     }
     
     func searchTermArraySize() -> Int {
-        searchTerms = dp.loadData()!
         return searchTerms.count
     }
     
@@ -85,6 +90,7 @@ class SearchViewModel {
         }
         
         searchTerms.insert(term, at: 0)
+        searchTermsBackup = searchTerms
         dp.saveData(term: term)
         completion()
     }
@@ -100,5 +106,24 @@ class SearchViewModel {
     
     func filteredResultSearchTerm(index: Int) -> String {
         return searchTerms[index]
+    }
+    
+    func filterTableViewContent(text: String, completion: @escaping () -> Void) {
+//        let searchTermsBackup = dp.loadData()
+        
+        var searchTermsFiltered: [String]?
+        
+        searchTermsFiltered = searchTermsBackup.filter({$0.contains(text)})
+                
+        if searchTermsFiltered?.count != 0 {
+            searchTerms = searchTermsFiltered!
+            completion()
+        } else if searchTermsFiltered?.count == 0 && text != "" {
+            searchTerms = searchTermsFiltered!
+            completion()
+        } else {
+            loadDataFromDP()
+            completion()
+        }
     }
 }

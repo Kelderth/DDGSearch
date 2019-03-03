@@ -23,6 +23,8 @@ class SearchViewController: UIViewController {
         
         let searchNib = UINib(nibName: "SearchHeader", bundle: Bundle.main)
         tableView.register(searchNib, forHeaderFooterViewReuseIdentifier: "SearchHeader")
+        
+        vm.loadDataFromDP()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -120,5 +122,17 @@ extension SearchViewController: UISearchBarDelegate {
         downloadResult(for: searchBar.text!)
         searchBar.text = ""
         searchBar.becomeFirstResponder()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+//        DispatchQueue.main.async {
+//            self.vm.searchTerms = self.vm.filterTableViewContent(text: searchText)!
+//            print(self.vm.searchTerms)
+//            self.tableView.reloadData()
+//        }
+        vm.filterTableViewContent(text: searchText) {
+            print(self.vm.searchTerms)
+            self.tableView.reloadData()
+        }
     }
 }
