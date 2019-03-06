@@ -49,4 +49,12 @@ class ResultViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.barStyle = .black
     }
+    
+    
+    // START TESTING VIEW CONTROLLER PROGRAMMATICALLY.
+    @IBAction func loadViewProgrammaticaly(_ sender: UIButton) {
+        let vc = ResultProgViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

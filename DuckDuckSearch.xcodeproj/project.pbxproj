@@ -26,6 +26,7 @@
 		04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */; };
 		04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */; };
 		04E7F3BA2228937F0064AFE0 /* DataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */; };
+		04E7F3BC222CA8150064AFE0 /* ResultProgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceService.swift; sourceTree = "<group>"; };
+		04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProgViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 				04122DCD2221C40D003461DB /* SearchHeader.xib */,
 				04122DC92220C809003461DB /* ResultViewController.swift */,
 				04122DBB22205FD1003461DB /* Main.storyboard */,
+				04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				04122DDC22237CDF003461DB /* SearchViewModel.swift in Sources */,
 				04122DD02221CC1E003461DB /* SearchTableViewCell.swift in Sources */,
 				04122DD822230F01003461DB /* NetworkService.swift in Sources */,
+				04E7F3BC222CA8150064AFE0 /* ResultProgViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -37,7 +37,8 @@ class SearchViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
                     self.vm.saveSearchTerm(term: term, completion: {
-                        self.performSegue(withIdentifier: "Result", sender: nil)
+//                        self.performSegue(withIdentifier: "Result", sender: nil)
+                        self.loadResultViewController()
                         
                         if !self.vm.searchTermExistsInTable(term: term) {
                             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .left)
@@ -75,9 +76,20 @@ class SearchViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! ResultViewController
+        
         vc.textDescription = vm.getDefinition()
         vc.textTitle = vm.getTitle()
         vc.imageToLoad = vm.getImageURL()
+    }
+    
+    func loadResultViewController() {
+        let vc = ResultProgViewController()
+        
+        vc.textDescription = vm.getDefinition()
+        vc.textTitle = vm.getTitle()
+        vc.imageToLoad = vm.getImageURL()
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
