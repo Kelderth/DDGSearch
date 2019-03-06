@@ -16,17 +16,29 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EKA-7k-iUZ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyc-NJ-6Sr">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
+                    <subviews>
+                        <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="EKA-7k-iUZ">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                    </subviews>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="EKA-7k-iUZ" secondAttribute="bottom" id="448-VE-sZ7"/>
+                        <constraint firstAttribute="trailing" secondItem="EKA-7k-iUZ" secondAttribute="trailing" id="JE2-KM-VA2"/>
+                        <constraint firstItem="EKA-7k-iUZ" firstAttribute="top" secondItem="Wyc-NJ-6Sr" secondAttribute="top" id="rYJ-a0-uoy"/>
+                        <constraint firstItem="EKA-7k-iUZ" firstAttribute="leading" secondItem="Wyc-NJ-6Sr" secondAttribute="leading" id="vfz-Ge-Vm0"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="EKA-7k-iUZ" firstAttribute="top" secondItem="Y0b-oq-Eov" secondAttribute="top" id="ZFe-jf-UWM"/>
-                <constraint firstAttribute="bottom" secondItem="EKA-7k-iUZ" secondAttribute="bottom" id="bKy-NS-rtT"/>
-                <constraint firstItem="EKA-7k-iUZ" firstAttribute="leading" secondItem="Y0b-oq-Eov" secondAttribute="leading" id="bTB-GI-oac"/>
-                <constraint firstItem="EKA-7k-iUZ" firstAttribute="trailing" secondItem="Y0b-oq-Eov" secondAttribute="trailing" id="lNb-Be-zFp"/>
+                <constraint firstItem="Wyc-NJ-6Sr" firstAttribute="trailing" secondItem="Y0b-oq-Eov" secondAttribute="trailing" id="2Hs-gZ-Xuf"/>
+                <constraint firstItem="Wyc-NJ-6Sr" firstAttribute="leading" secondItem="Y0b-oq-Eov" secondAttribute="leading" id="38z-lU-EHC"/>
+                <constraint firstItem="Wyc-NJ-6Sr" firstAttribute="top" secondItem="Y0b-oq-Eov" secondAttribute="top" id="PT8-1S-HIa"/>
+                <constraint firstItem="Wyc-NJ-6Sr" firstAttribute="bottom" secondItem="Y0b-oq-Eov" secondAttribute="bottom" id="WEQ-Ku-Iiq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="Y0b-oq-Eov"/>
