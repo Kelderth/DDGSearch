@@ -83,7 +83,7 @@ class SearchViewController: UIViewController {
     }
     
     func loadResultViewController() {
-        let vc = ResultProgViewController()
+        let vc = ResultViewController()
         
         vc.textDescription = vm.getDefinition()
         vc.textTitle = vm.getTitle()

@@ -12,7 +12,6 @@
 		04122DBD22205FD1003461DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04122DBB22205FD1003461DB /* Main.storyboard */; };
 		04122DBF22205FD4003461DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04122DBE22205FD4003461DB /* Assets.xcassets */; };
 		04122DC222205FD4003461DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04122DC022205FD4003461DB /* LaunchScreen.storyboard */; };
-		04122DCA2220C809003461DB /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DC92220C809003461DB /* ResultViewController.swift */; };
 		04122DCC2221C3F6003461DB /* SearchHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DCB2221C3F6003461DB /* SearchHeader.swift */; };
 		04122DCE2221C40D003461DB /* SearchHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04122DCD2221C40D003461DB /* SearchHeader.xib */; };
 		04122DD02221CC1E003461DB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DCF2221CC1E003461DB /* SearchTableViewCell.swift */; };
@@ -26,7 +25,7 @@
 		04E7F3B722287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */; };
 		04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */; };
 		04E7F3BA2228937F0064AFE0 /* DataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */; };
-		04E7F3BC222CA8150064AFE0 /* ResultProgViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */; };
+		04E7F3BC222CA8150064AFE0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3BB222CA8140064AFE0 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +36,6 @@
 		04122DBE22205FD4003461DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04122DC122205FD4003461DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04122DC322205FD4003461DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		04122DC92220C809003461DB /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		04122DCB2221C3F6003461DB /* SearchHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHeader.swift; sourceTree = "<group>"; };
 		04122DCD2221C40D003461DB /* SearchHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchHeader.xib; sourceTree = "<group>"; };
 		04122DCF2221CC1E003461DB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
@@ -51,7 +49,7 @@
 		04E7F3B522287D6A0064AFE0 /* SearchTerms+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataClass.swift"; sourceTree = "<group>"; };
 		04E7F3B622287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchTerms+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceService.swift; sourceTree = "<group>"; };
-		04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProgViewController.swift; sourceTree = "<group>"; };
+		04E7F3BB222CA8140064AFE0 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,9 +112,8 @@
 				04122DCF2221CC1E003461DB /* SearchTableViewCell.swift */,
 				04122DCB2221C3F6003461DB /* SearchHeader.swift */,
 				04122DCD2221C40D003461DB /* SearchHeader.xib */,
-				04122DC92220C809003461DB /* ResultViewController.swift */,
 				04122DBB22205FD1003461DB /* Main.storyboard */,
-				04E7F3BB222CA8140064AFE0 /* ResultProgViewController.swift */,
+				04E7F3BB222CA8140064AFE0 /* ResultViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,11 +221,10 @@
 				04E7F3B822287D6A0064AFE0 /* SearchTerms+CoreDataProperties.swift in Sources */,
 				04122DBA22205FD1003461DB /* SearchViewController.swift in Sources */,
 				04122DB822205FD1003461DB /* AppDelegate.swift in Sources */,
-				04122DCA2220C809003461DB /* ResultViewController.swift in Sources */,
 				04122DDC22237CDF003461DB /* SearchViewModel.swift in Sources */,
 				04122DD02221CC1E003461DB /* SearchTableViewCell.swift in Sources */,
 				04122DD822230F01003461DB /* NetworkService.swift in Sources */,
-				04E7F3BC222CA8150064AFE0 /* ResultProgViewController.swift in Sources */,
+				04E7F3BC222CA8150064AFE0 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
