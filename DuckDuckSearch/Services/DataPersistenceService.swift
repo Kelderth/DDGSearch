@@ -9,15 +9,8 @@
 import UIKit
 import CoreData
 
-class DataPersistenceService: NSManagedObject {
+class DataPersistenceService {
     private let context = DataController.shared.persistentContainer.viewContext
-//    var mainEntity = NSEntityDescription()
-//    
-//    override init(entity: NSEntityDescription, insertInto context: NSManagedObjectContext?) {
-//        super.init(entity: entity, insertInto: context)
-//        let entity = NSEntityDescription.entity(forEntityName: "SearchTerms", in: self.context)
-//        self.mainEntity = entity!
-//    }
     
     func saveData(term: String) {
         let entity = NSEntityDescription.entity(forEntityName: "SearchTerms", in: context)
