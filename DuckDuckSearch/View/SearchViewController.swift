@@ -18,6 +18,8 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController!.navigationBar.barStyle = .black
+        
         tableView.delegate = self
         tableView.dataSource = self
         
@@ -27,17 +29,12 @@ class SearchViewController: UIViewController {
         vm.loadDataFromDP()
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barStyle = .black
-    }
-
     func downloadResult(for term: String){
         vm.downloadResult(for: vm.setURL(for: term)) { (result) in
             if result != nil {
                 DispatchQueue.main.async {
                     self.activityIndicatorView.stopAnimating()
-                    self.vm.saveSearchTerm(term: term, completion: {
-//                        self.performSegue(withIdentifier: "Result", sender: nil)
+                    self.vm.saveSearchTerm(term: term, completion: { _ in
                         self.loadResultViewController()
                         
                         if !self.vm.searchTermExistsInTable(term: term) {
@@ -125,8 +122,11 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            vm.deleteFromSearchTerm(index: indexPath.row)
-            tableView.deleteRows(at: [IndexPath(item: indexPath.row, section: 0)], with: .fade)
+            vm.deleteFromSearchTerm(index: indexPath.row) { (response) in
+                if response == true {
+                    tableView.deleteRows(at: [IndexPath(item: indexPath.row, section: 0)], with: .fade)
+                }
+            }
         }
     }
     

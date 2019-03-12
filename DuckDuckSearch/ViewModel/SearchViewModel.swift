@@ -98,11 +98,11 @@ class SearchViewModel {
         return searchTerms
     }
     
-    func saveSearchTerm(term: String, completion: @escaping () -> Void) {
+    func saveSearchTerm(term: String, completion: @escaping (Bool) -> Void) {
         searchTerms = searchTermsBackup
         
         if searchTerms.contains(term) {
-            completion()
+            completion(false)
             return
         }
         
@@ -111,13 +111,19 @@ class SearchViewModel {
         
         searchBarText = ""
         dp.saveData(term: term)
-        completion()
+        completion(true)
     }
     
-    func deleteFromSearchTerm(index: Int) {
+    func deleteFromSearchTerm(index: Int, completion: @escaping (Bool) -> Void) {
+        if index > searchTerms.count {
+            completion(false)
+            return
+        }
+                
         dp.deleteData(term: searchTerms[index])
         searchTerms.remove(at: index)
         searchTermsBackup = searchTerms
+        completion(true)
     }
     
     func searchTermExistsInTable(term: String) -> Bool {

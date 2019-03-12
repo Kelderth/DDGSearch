@@ -19,6 +19,7 @@
 		04122DD822230F01003461DB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DD722230F00003461DB /* NetworkService.swift */; };
 		04122DDA22237055003461DB /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DD922237055003461DB /* ImageCache.swift */; };
 		04122DDC22237CDF003461DB /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04122DDB22237CDF003461DB /* SearchViewModel.swift */; };
+		04D2A88C2231C1630072B64C /* DuckDuckSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D2A88B2231C1630072B64C /* DuckDuckSearchTests.swift */; };
 		04E7F3AD222706CA0064AFE0 /* ImageView+additionalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */; };
 		04E7F3B0222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3AE222850FC0064AFE0 /* DuckDuckSearch.xcdatamodeld */; };
 		04E7F3B422285D420064AFE0 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B322285D420064AFE0 /* DataController.swift */; };
@@ -27,6 +28,16 @@
 		04E7F3BA2228937F0064AFE0 /* DataPersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3B92228937F0064AFE0 /* DataPersistenceService.swift */; };
 		04E7F3BC222CA8150064AFE0 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E7F3BB222CA8140064AFE0 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		04D2A88E2231C1630072B64C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04122DAC22205FD1003461DB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 04122DB322205FD1003461DB;
+			remoteInfo = DuckDuckSearch;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		04122DB422205FD1003461DB /* DuckDuckSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuckDuckSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +54,9 @@
 		04122DD722230F00003461DB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		04122DD922237055003461DB /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		04122DDB22237CDF003461DB /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		04D2A8892231C1620072B64C /* DuckDuckSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DuckDuckSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		04D2A88B2231C1630072B64C /* DuckDuckSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuckDuckSearchTests.swift; sourceTree = "<group>"; };
+		04D2A88D2231C1630072B64C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04E7F3AC222706CA0064AFE0 /* ImageView+additionalSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+additionalSettings.swift"; sourceTree = "<group>"; };
 		04E7F3AF222850FC0064AFE0 /* DuckDuckSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DuckDuckSearch.xcdatamodel; sourceTree = "<group>"; };
 		04E7F3B322285D420064AFE0 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -60,6 +74,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04D2A8862231C1620072B64C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -67,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				04122DB622205FD1003461DB /* DuckDuckSearch */,
+				04D2A88A2231C1630072B64C /* DuckDuckSearchTests */,
 				04122DB522205FD1003461DB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -75,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				04122DB422205FD1003461DB /* DuckDuckSearch.app */,
+				04D2A8892231C1620072B64C /* DuckDuckSearchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,6 +161,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		04D2A88A2231C1630072B64C /* DuckDuckSearchTests */ = {
+			isa = PBXGroup;
+			children = (
+				04D2A88B2231C1630072B64C /* DuckDuckSearchTests.swift */,
+				04D2A88D2231C1630072B64C /* Info.plist */,
+			);
+			path = DuckDuckSearchTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,6 +190,24 @@
 			productReference = 04122DB422205FD1003461DB /* DuckDuckSearch.app */;
 			productType = "com.apple.product-type.application";
 		};
+		04D2A8882231C1620072B64C /* DuckDuckSearchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 04D2A8922231C17E0072B64C /* Build configuration list for PBXNativeTarget "DuckDuckSearchTests" */;
+			buildPhases = (
+				04D2A8852231C1620072B64C /* Sources */,
+				04D2A8862231C1620072B64C /* Frameworks */,
+				04D2A8872231C1620072B64C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				04D2A88F2231C1630072B64C /* PBXTargetDependency */,
+			);
+			name = DuckDuckSearchTests;
+			productName = DuckDuckSearchTests;
+			productReference = 04D2A8892231C1620072B64C /* DuckDuckSearchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,6 +220,10 @@
 				TargetAttributes = {
 					04122DB322205FD1003461DB = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					04D2A8882231C1620072B64C = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = 04122DB322205FD1003461DB;
 					};
 				};
 			};
@@ -187,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				04122DB322205FD1003461DB /* DuckDuckSearch */,
+				04D2A8882231C1620072B64C /* DuckDuckSearchTests */,
 			);
 		};
 /* End PBXProject section */
@@ -200,6 +255,13 @@
 				04122DC222205FD4003461DB /* LaunchScreen.storyboard in Resources */,
 				04122DBF22205FD4003461DB /* Assets.xcassets in Resources */,
 				04122DBD22205FD1003461DB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		04D2A8872231C1620072B64C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +290,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		04D2A8852231C1620072B64C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				04D2A88C2231C1630072B64C /* DuckDuckSearchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		04D2A88F2231C1630072B64C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 04122DB322205FD1003461DB /* DuckDuckSearch */;
+			targetProxy = 04D2A88E2231C1630072B64C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		04122DBB22205FD1003461DB /* Main.storyboard */ = {
@@ -400,6 +478,44 @@
 			};
 			name = Release;
 		};
+		04D2A8902231C1640072B64C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DuckDuckSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EduardoSantiz.DuckDuckSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuckDuckSearch.app/DuckDuckSearch";
+			};
+			name = Debug;
+		};
+		04D2A8912231C1640072B64C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DuckDuckSearchTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = EduardoSantiz.DuckDuckSearchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DuckDuckSearch.app/DuckDuckSearch";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -417,6 +533,15 @@
 			buildConfigurations = (
 				04122DC722205FD4003461DB /* Debug */,
 				04122DC822205FD4003461DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		04D2A8922231C17E0072B64C /* Build configuration list for PBXNativeTarget "DuckDuckSearchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				04D2A8902231C1640072B64C /* Debug */,
+				04D2A8912231C1640072B64C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
