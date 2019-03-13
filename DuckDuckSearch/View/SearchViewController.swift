@@ -41,7 +41,7 @@ class SearchViewController: UIViewController {
                             self.tableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .left)
                         }
                         
-                        self.vm.filterTableViewContent(text: self.vm.getSearchBarText(), completion: {
+                        self.vm.filterTableViewContent(text: self.vm.getSearchBarText(), completion: { _ in
                             self.tableView.reloadData()                            
                         })
                         
@@ -52,7 +52,7 @@ class SearchViewController: UIViewController {
                     self.activityIndicatorView.stopAnimating()
                     self.searchMessageAlertResponse(term: term)
                     self.vm.restartTermArrayContent()
-                    self.vm.filterTableViewContent(text: self.vm.emptySearchBatText(), completion: {
+                    self.vm.filterTableViewContent(text: self.vm.emptySearchBatText(), completion: { _ in
                         self.tableView.reloadData()
                     })
                 }
@@ -70,15 +70,7 @@ class SearchViewController: UIViewController {
         
         present(alertMessage, animated: true)
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ResultViewController
         
-        vc.textDescription = vm.getDefinition()
-        vc.textTitle = vm.getTitle()
-        vc.imageToLoad = vm.getImageURL()
-    }
-    
     func loadResultViewController() {
         let vc = ResultViewController()
         
@@ -143,7 +135,7 @@ extension SearchViewController: UISearchBarDelegate {
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        vm.filterTableViewContent(text: searchText) {
+        vm.filterTableViewContent(text: searchText) { _ in
             self.vm.searchBarText = searchBar.text ?? ""
             self.tableView.reloadData()
         }

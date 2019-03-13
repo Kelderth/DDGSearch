@@ -64,11 +64,67 @@ class DuckDuckSearchTests: XCTestCase {
         }
         
     }
+    
+    func testFilterTableViewContent_WillFilterContent_ReturnTrue() {
+        let filterTerm: String = "B"
+        vm.filterTableViewContent(text: filterTerm) { (response) in
+            XCTAssertTrue(response, "No matches founded for \"\(filterTerm)\"")
+            print(self.vm.searchTerms)
+        }
+        
+    }
+    
+    func testFilterTableViewContent_WontFilterContent_ReturnFalse() {
+        let filterTerm: String = "Bars"
+        vm.filterTableViewContent(text: filterTerm) { (response) in
+            XCTAssertFalse(response, "\(self.vm.searchTerms.count) matches were founded!")
+            print(self.vm.searchTerms)
+        }
+    }
+    
+    func testDownloadResult_WillDownloadData_NotNil() {
+        let term: String = "Cat"
+        let termURL: URL = URL(string: "https://api.duckduckgo.com?q=\(term)&format=json&pretty=1&no_html=1&skip_disambig=1")!
+        
+        let expectation = XCTestExpectation(description: "downloadResult")
+        
+        vm.downloadResult(for: termURL) { (DDGModel) in
+            XCTAssertNotNil(DDGModel, "Error, \(term) did not return any result.")
+            print("Did enter completion")
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+        print("Test Completed.")
+    }
+    
+    func testDownloadResult_WontDownloadData_ResultFalse() {
+        let term: String = "Camaron"
+        let termURL: URL = URL(string: "https://api.duckduckgo.com?q=\(term)&format=json&pretty=1&no_html=1&skip_disambig=1")!
+        
+        let expectation = XCTestExpectation(description: "downloadResult")
+        
+        vm.downloadResult(for: termURL) { (DDGModel) in
+            XCTAssertNil(DDGModel, "Error, \(term) was already searched before.")
+            print("Did enter completion")
+            
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 10)
+        print("Test Completed.")
+    }
 
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {
             // Put the code you want to measure the time of here.
+            let term: String = "Cat"
+            
+            let termURL: URL = URL(string: "https://api.duckduckgo.com?q=\(term)&format=json&pretty=1&no_html=1&skip_disambig=1")!
+            
+            vm.downloadResult(for: termURL, completion: { (DDGModel) in
+                print("title: ",(DDGModel?.title)!)
+            })
         }
     }
 

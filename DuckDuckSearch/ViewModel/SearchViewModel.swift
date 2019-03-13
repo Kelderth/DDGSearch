@@ -134,18 +134,18 @@ class SearchViewModel {
         return searchTerms[index]
     }
     
-    func filterTableViewContent(text: String, completion: @escaping () -> Void) {
+    func filterTableViewContent(text: String, completion: @escaping (Bool) -> Void) {
         var searchTermsFiltered: [String]?
         searchBarText = text
         
         searchTermsFiltered = searchTermsBackup.filter({$0.contains(text)})
                 
-        if ((searchTermsFiltered?.count)! == 0 && text != "") || (searchTermsFiltered?.count)! > 0 {
+        if (searchTermsFiltered?.count)! > 0  && text != "" {
             searchTerms = searchTermsFiltered!
-            completion()
+            completion(true)
         } else {
             searchTerms = searchTermsBackup
-            completion()
+            completion(false)
         }
     }
 }
