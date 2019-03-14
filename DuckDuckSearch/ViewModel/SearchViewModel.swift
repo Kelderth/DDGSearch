@@ -20,10 +20,10 @@ class SearchViewModel {
     let dp = DataPersistenceService()
     
     func setURL(for term: String?) -> URL? {
-        let baseURL: URL! = URL(string: self.baseURL)
         
-        var components: URLComponents! = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
-        let parameters: [String: String] = ["q": term!, "format": "json", "pretty": "1", "no_html": "1", "skip_disambig": "1"]
+        guard let baseURL = URL(string: self.baseURL), let searchTerm = term, var components = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else { return nil }
+        
+        let parameters: [String: String] = ["q": searchTerm, "format": "json", "pretty": "1", "no_html": "1", "skip_disambig": "1"]
         components.queryItems = parameters.compactMap({URLQueryItem(name: $0.key, value: $0.value)})
         guard let url = components.url else { return nil }
         
@@ -140,7 +140,7 @@ class SearchViewModel {
         
         searchTermsFiltered = searchTermsBackup.filter({$0.contains(text)})
                 
-        if (searchTermsFiltered?.count)! > 0  && text != "" {
+        if searchTermsFiltered?.isEmpty == false && text != "" {
             searchTerms = searchTermsFiltered!
             completion(true)
         } else {

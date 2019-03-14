@@ -69,7 +69,6 @@ class DuckDuckSearchTests: XCTestCase {
         let filterTerm: String = "B"
         vm.filterTableViewContent(text: filterTerm) { (response) in
             XCTAssertTrue(response, "No matches founded for \"\(filterTerm)\"")
-            print(self.vm.searchTerms)
         }
         
     }
@@ -78,7 +77,6 @@ class DuckDuckSearchTests: XCTestCase {
         let filterTerm: String = "Bars"
         vm.filterTableViewContent(text: filterTerm) { (response) in
             XCTAssertFalse(response, "\(self.vm.searchTerms.count) matches were founded!")
-            print(self.vm.searchTerms)
         }
     }
     
@@ -90,12 +88,10 @@ class DuckDuckSearchTests: XCTestCase {
         
         vm.downloadResult(for: termURL) { (DDGModel) in
             XCTAssertNotNil(DDGModel, "Error, \(term) did not return any result.")
-            print("Did enter completion")
             
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10)
-        print("Test Completed.")
     }
     
     func testDownloadResult_WontDownloadData_ResultFalse() {
@@ -106,12 +102,10 @@ class DuckDuckSearchTests: XCTestCase {
         
         vm.downloadResult(for: termURL) { (DDGModel) in
             XCTAssertNil(DDGModel, "Error, \(term) was already searched before.")
-            print("Did enter completion")
             
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 10)
-        print("Test Completed.")
     }
 
     func testPerformanceExample() {
